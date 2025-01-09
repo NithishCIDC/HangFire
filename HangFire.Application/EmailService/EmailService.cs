@@ -11,7 +11,7 @@ namespace HangFire.Application.EmailService
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("The Boys", "theboyscidc@gmail.com"));
             message.To.Add(new MailboxAddress("", email));
-            message.Subject = "Contact me";
+            message.Subject = "ECOB.org project";
 
             var bodyBuilder = new BodyBuilder { HtmlBody = "Hi, I am hariprakash" };
 
@@ -22,6 +22,7 @@ namespace HangFire.Application.EmailService
             client.Authenticate("theboyscidc@gmail.com", "hhilghxgjktiscgx");
             client.Send(message);
             client.Disconnect(true);
+            Console.WriteLine("Email Sent");
         }
     }
 }

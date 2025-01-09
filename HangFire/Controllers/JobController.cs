@@ -33,7 +33,7 @@ namespace HangFire.Controllers
         [HttpPost("recurringJob")]
         public IActionResult CreateRecurringJob()
         {
-            RecurringJob.AddOrUpdate<IEmailService>("recurring-job", x => x.EmailSend("2k20it01@kiot.ac.in"), Cron.Minutely);
+            RecurringJob.AddOrUpdate<IEmailService>("recurring-job", x => x.EmailSend("kesavan.saravanan@concertidc.com"), "*/5 * * * * *");
             return Ok();
         }
     }
